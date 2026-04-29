@@ -6,5 +6,7 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="/home/a10888340/Descargas/LGoodDatePicker-7.3.3.jar"/>
+	<classpathentry kind="lib" path="/home/a10888340/Descargas/ApprovalRatingBar_full.zip"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

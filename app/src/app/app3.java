@@ -7,6 +7,9 @@ import javax.swing.JTable;
 import javax.swing.JLabel;
 import javax.swing.JComboBox;
 import javax.swing.JButton;
+import javax.swing.JTabbedPane;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 public class app3 {
 
@@ -14,6 +17,10 @@ public class app3 {
 	private JTable tableBicicletas;
 	private JTable tableRutas;
 	private JTable tableBonos;
+	private JTable tableB;
+	private JTextField txtValoraciónB;
+	private JTable tableR;
+	private JTable tableBn;
 
 	/**
 	 * Launch the application.
@@ -43,67 +50,123 @@ public class app3 {
 	 */
 	private void initialize() {
 		Usuario = new JFrame();
-		Usuario.setTitle("Usuario");
-		Usuario.setBounds(100, 100, 1504, 644);
-		Usuario.setExtendedState(JFrame.MAXIMIZED_BOTH);
+		Usuario.setTitle("BiciValen-Menu");
+		Usuario.setBounds(100, 100, 745, 600);
 		Usuario.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		Usuario.getContentPane().setLayout(null);
 		
-		tableBicicletas = new JTable();
-		tableBicicletas.setBounds(89, 72, 317, 163);
-		Usuario.getContentPane().add(tableBicicletas);
+		JButton btnMostrar = new JButton("Mostrar");
+		btnMostrar.setVisible(false);
+		btnMostrar.setBounds(33, 25, 105, 27);
+		Usuario.getContentPane().add(btnMostrar);
 		
-		JLabel lblEnQueEstacin = new JLabel("En que estación estas:");
-		lblEnQueEstacin.setBounds(12, 27, 142, 17);
-		Usuario.getContentPane().add(lblEnQueEstacin);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setBounds(156, 27, 171, 26);
-		Usuario.getContentPane().add(comboBox);
+		JTabbedPane tabbedPane_1 = new JTabbedPane(JTabbedPane.TOP);
+		tabbedPane_1.setBounds(106, 103, 577, 301);
+		Usuario.getContentPane().add(tabbedPane_1);
 		
-		JButton btnDevolver = new JButton("Devolver ");
-		btnDevolver.setBounds(89, 395, 105, 27);
-		Usuario.getContentPane().add(btnDevolver);
+		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
+		tabbedPane_1.addTab("Gestión Bicis", null, tabbedPane, null);
+		
+		JPanel panelAl = new JPanel();
+		tabbedPane.addTab("Alquilar", null, panelAl, null);
+		panelAl.setLayout(null);
+		
+		JLabel lblEnQueEstacin = new JLabel("En que Estación Estas:");
+		lblEnQueEstacin.setBounds(12, 12, 141, 17);
+		panelAl.add(lblEnQueEstacin);
+		
+		JComboBox comboBoxE = new JComboBox();
+		comboBoxE.setBounds(171, 7, 280, 26);
+		panelAl.add(comboBoxE);
+		
+		JLabel lblEligeBici = new JLabel("Selecciona Bici:");
+		lblEligeBici.setBounds(12, 41, 91, 17);
+		panelAl.add(lblEligeBici);
+		
+		tableB = new JTable();
+		tableB.setBounds(12, 70, 543, 90);
+		panelAl.add(tableB);
 		
 		JButton btnAlquilar = new JButton("Alquilar");
-		btnAlquilar.setBounds(301, 395, 105, 27);
-		Usuario.getContentPane().add(btnAlquilar);
+		btnAlquilar.setBounds(232, 168, 105, 27);
+		panelAl.add(btnAlquilar);
 		
-		JLabel lblTusRutas = new JLabel("Tus Rutas:");
-		lblTusRutas.setBounds(517, 27, 85, 17);
-		Usuario.getContentPane().add(lblTusRutas);
+		JPanel panelDevol = new JPanel();
+		tabbedPane.addTab("Devolver", null, panelDevol, null);
+		panelDevol.setLayout(null);
 		
-		JLabel lblBicicis = new JLabel("Bicicis:");
-		lblBicicis.setBounds(11, 71, 60, 17);
-		Usuario.getContentPane().add(lblBicicis);
+		JLabel lblEnQueEstacin_1 = new JLabel("En que Estación Estas:");
+		lblEnQueEstacin_1.setBounds(12, 12, 131, 17);
+		panelDevol.add(lblEnQueEstacin_1);
 		
-		tableRutas = new JTable();
-		tableRutas.setBounds(594, 28, 317, 163);
-		Usuario.getContentPane().add(tableRutas);
+		JComboBox comboBoxED = new JComboBox();
+		comboBoxED.setBounds(171, 7, 280, 26);
+		panelDevol.add(comboBoxED);
 		
-		JLabel lblBonos = new JLabel("Bonos:");
-		lblBonos.setBounds(1016, 27, 60, 17);
-		Usuario.getContentPane().add(lblBonos);
+		JLabel lblValoracin = new JLabel("Valoración:");
+		lblValoracin.setBounds(12, 58, 73, 17);
+		panelDevol.add(lblValoracin);
 		
-		tableBonos = new JTable();
-		tableBonos.setBounds(1075, 26, 354, 165);
-		Usuario.getContentPane().add(tableBonos);
+		txtValoraciónB = new JTextField();
+		txtValoraciónB.setBounds(91, 56, 114, 21);
+		panelDevol.add(txtValoraciónB);
+		txtValoraciónB.setColumns(10);
+		
+		JButton btnDevolver = new JButton("Devolver");
+		btnDevolver.setBounds(232, 168, 105, 27);
+		panelDevol.add(btnDevolver);
+		
+		JPanel panelR = new JPanel();
+		tabbedPane_1.addTab("Tus Rutas", null, panelR, null);
+		panelR.setLayout(null);
+		
+		tableR = new JTable();
+		tableR.setBounds(12, 12, 548, 115);
+		panelR.add(tableR);
+		
+		JPanel panelBn = new JPanel();
+		tabbedPane_1.addTab("Comprar Bonos", null, panelBn, null);
+		panelBn.setLayout(null);
+		
+		tableBn = new JTable();
+		tableBn.setBounds(12, 12, 548, 115);
+		panelBn.add(tableBn);
 		
 		JButton btnComprar = new JButton("Comprar");
-		btnComprar.setBounds(1075, 259, 105, 27);
-		Usuario.getContentPane().add(btnComprar);
+		btnComprar.setBounds(51, 166, 105, 27);
+		panelBn.add(btnComprar);
 		
 		JButton btnMasInfo = new JButton("Mas Info");
-		btnMasInfo.setBounds(1324, 259, 105, 27);
-		Usuario.getContentPane().add(btnMasInfo);
+		btnMasInfo.setBounds(387, 166, 105, 27);
+		panelBn.add(btnMasInfo);
 		
-		JLabel lblSeleccionarBici = new JLabel("Seleccionar Bici:");
-		lblSeleccionarBici.setBounds(12, 291, 113, 17);
-		Usuario.getContentPane().add(lblSeleccionarBici);
+		JPanel panelA = new JPanel();
+		tabbedPane_1.addTab("Necesitas Ayuda", null, panelA, null);
+		panelA.setLayout(null);
 		
-		JComboBox comboBox_1 = new JComboBox();
-		comboBox_1.setBounds(123, 286, 142, 26);
-		Usuario.getContentPane().add(comboBox_1);
+		JLabel lblNecesitoAyudaCon = new JLabel("Necesito Ayuda Con:");
+		lblNecesitoAyudaCon.setBounds(12, 12, 122, 17);
+		panelA.add(lblNecesitoAyudaCon);
+		
+		JButton btnEliminarCuenta = new JButton("Eliminar Cuenta");
+		btnEliminarCuenta.setBounds(12, 51, 241, 27);
+		panelA.add(btnEliminarCuenta);
+		
+		JButton btnCambiarContrasea = new JButton("Cambiar Contraseña");
+		btnCambiarContrasea.setBounds(12, 90, 241, 27);
+		panelA.add(btnCambiarContrasea);
+		
+		JButton btnCambiarCorreoElectronico = new JButton("Cambiar Correo Electronico");
+		btnCambiarCorreoElectronico.setBounds(12, 129, 241, 27);
+		panelA.add(btnCambiarCorreoElectronico);
+		
+		JButton btnCerrarSesin = new JButton("Cerrar Sesión");
+		btnCerrarSesin.setBounds(12, 168, 241, 27);
+		panelA.add(btnCerrarSesin);
+		
+		
+		
 	}
 	public JFrame getFrame() {
 	    return Usuario;

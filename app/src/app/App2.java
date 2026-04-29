@@ -47,25 +47,25 @@ public class App2 {
 	private void initialize() {
 		InicioSesion = new JFrame();
 		InicioSesion.setTitle("Inicio De Sesión");
-		InicioSesion.setBounds(100, 100, 701, 441);
+		InicioSesion.setBounds(100, 100, 445, 503);
 		InicioSesion.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		InicioSesion.getContentPane().setLayout(null);
 
 		JLabel lblNombre = new JLabel("Nombre:");
-		lblNombre.setBounds(212, 186, 60, 17);
+		lblNombre.setBounds(111, 118, 60, 17);
 		InicioSesion.getContentPane().add(lblNombre);
 
 		JLabel lblContrasea = new JLabel("Contraseña:");
-		lblContrasea.setBounds(212, 226, 91, 17);
+		lblContrasea.setBounds(111, 192, 91, 17);
 		InicioSesion.getContentPane().add(lblContrasea);
 
 		txtNombre = new JTextField();
-		txtNombre.setBounds(397, 184, 114, 21);
+		txtNombre.setBounds(111, 159, 227, 21);
 		InicioSesion.getContentPane().add(txtNombre);
 		txtNombre.setColumns(10);
 
 		passwordLogin = new JPasswordField();
-		passwordLogin.setBounds(397, 224, 114, 21);
+		passwordLogin.setBounds(111, 230, 227, 21);
 		InicioSesion.getContentPane().add(passwordLogin);
 
 		btnLogin = new JButton("Login");
@@ -88,7 +88,7 @@ public class App2 {
 				}
 			}
 		});
-		btnLogin.setBounds(406, 272, 105, 27);
+		btnLogin.setBounds(177, 294, 105, 27);
 		InicioSesion.getContentPane().add(btnLogin);
 
 	}
